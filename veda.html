@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veda AI Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Hide thank you message by default */
+  #thanksMessage {
+    display: none;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #00f0ff;
+  }
+
+  /* Make sure particles canvas covers background */
+  #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+
+<!-- Particle Background -->
+<div id="particles-js"></div>
+
+<!-- Header -->
+<header>
+  <h2>Veda AI</h2>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#tech">Tech Stack</a>
+    <a href="#demo">Live Demo</a>
+    <a href="#contact">Contact Me</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1 class="pulse-text">Veda AI</h1>
+  <p class="fade-in">Your intelligent AI assistant for learning, health, and productivity.</p>
+  <div class="hero-buttons fade-in">
+    <a href="#demo" class="btn glow-btn">Live Demo</a>
+    <a href="#contact" class="btn glow-btn">Contact Me</a>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section" id="features">
+  <h2 class="fade-in">What Veda Can Do</h2>
+  <div class="cards-container">
+    <div class="card glow-card fade-up">
+      <h3>Motivation & Jokes</h3>
+      <p>Veda can motivate you and make you laugh with random jokes.</p>
+    </div>
+    <div class="card glow-card fade-up delay-1">
+      <h3>Facts & Time Info</h3>
+      <p>Provides fun facts, current date/time, and tomorrow/yesterday info.</p>
+    </div>
+    <div class="card glow-card fade-up delay-2">
+      <h3>Reminders</h3>
+      <p>Save reminders and view them anytime.</p>
+    </div>
+    <div class="card glow-card fade-up delay-3">
+      <h3>Open Websites</h3>
+      <p>Open Google, YouTube, Instagram, and more directly via chat.</p>
+    </div>
+    <div class="card glow-card fade-up delay-4">
+      <h3>Voice Interaction</h3>
+      <p>Veda speaks in a female voice for a more interactive experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section class="section" id="tech">
+  <h2 class="fade-in">Tech Stack</h2>
+  <div class="cards-container">
+    <div class="card glow-card fade-up">
+      <h3>HTML & CSS</h3>
+    </div>
+    <div class="card glow-card fade-up delay-1">
+      <h3>JavaScript</h3>
+    </div>
+    <div class="card glow-card fade-up delay-2">
+      <h3>Web Speech API</h3>
+    </div>
+    <div class="card glow-card fade-up delay-3">
+      <h3>LocalStorage</h3>
+    </div>
+    <div class="card glow-card fade-up delay-4">
+      <h3>Canvas Particles</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Live Demo Section -->
+<section class="section" id="demo">
+  <h2 class="fade-in">Live Demo</h2>
+  <a href="https://kgg-ai.github.io/Veda-AI/" target="_blank" class="btn glow-btn">LIVE DEMO</a>
+</section>
+
+<!-- Contact Me Section -->
+<section class="section" id="contact">
+  <h2 class="fade-in">Contact Me</h2>
+  <form class="contact-form glow-card" onsubmit="showThanks(event)">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="thanksMessage">✅ Thanks! I will get back to you.</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Veda AI. All rights reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  function showThanks(event) {
+    event.preventDefault();
+    document.getElementById("thanksMessage").style.display = "block";
+    event.target.reset();
+  }
+
+  // Initialize particles.js
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#00ffff" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.6 },
+      "size": { "value": 3 },
+      "line_linked": { "enable": true, "distance": 150, "color": "#00ffff", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 2 }
+    },
+    "interactivity": {
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+</body>
+</html>

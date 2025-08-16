@@ -1,0 +1,148 @@
+/* ===== Futuristic Veda AI Portfolio ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0a0a0a;
+  color: #e0e0e0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 1px solid #0ff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header h2 { color: #0ff; font-size: 1.8rem; letter-spacing: 1px; }
+header a { color: #e0e0e0; margin-left: 20px; font-weight: 600; transition: color 0.3s ease; }
+header a:hover { color: #0ff; }
+
+/* Hero Section */
+.hero {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; height: 100vh; position: relative; overflow: hidden;
+}
+.pulse-text {
+  font-size: 6rem; background: linear-gradient(90deg, #0ff, #6c63ff, #ff00ff);
+  background-clip: text; -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
+
+.hero p { font-size: 1.5rem; max-width: 700px; margin: 20px 0; opacity: 0; animation: fadeIn 2s forwards; animation-delay: 0.5s; }
+
+.hero-buttons { display: flex; gap: 30px; margin-top: 20px; }
+.btn.glow-btn {
+  border: 2px solid #0ff; color: #0ff; border-radius: 50px; padding: 15px 40px;
+  font-size: 1.2rem; background: transparent; cursor: pointer;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #6c63ff; transition: all 0.3s ease;
+}
+.btn.glow-btn:hover { background: #0ff; color: #0a0a0a; box-shadow:0 0 25px #0ff,0 0 50px #6c63ff; }
+
+/* Sections */
+.section { padding: 100px 50px; display: flex; flex-direction: column; align-items: center; }
+.section h2 { font-size: 3rem; color: #0ff; margin-bottom: 50px; }
+
+/* Cards */
+.cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+.card {
+  background: #121212; border: 1px solid #0ff; border-radius: 20px; padding: 40px;
+  min-width: 250px; text-align: center; box-shadow:0 0 25px rgba(0,255,255,0.4),0 0 50px rgba(108,99,255,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover { transform: translateY(-15px) rotateX(5deg) rotateY(5deg); box-shadow: 0 0 50px #0ff,0 0 80px #6c63ff; }
+.glow-card { animation: fadeUp 1s forwards; }
+.fade-up { opacity: 0; animation: fadeUp 1s forwards; }
+.fade-up.delay-1 { animation-delay: 0.3s; } .fade-up.delay-2 { animation-delay:0.6s; } .fade-up.delay-3 { animation-delay:0.9s; } .fade-up.delay-4 { animation-delay:1.2s; }
+
+@keyframes fadeUp { 0%{transform:translateY(30px);opacity:0;}100%{transform:translateY(0);opacity:1;} }
+@keyframes fadeIn { to{opacity:1;} }
+
+/* Live Demo */
+.btn.glow-btn {
+  border: 2px solid #0ff;
+  color: #0ff;
+  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #6c63ff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn.glow-btn:hover {
+  background: #0ff;
+  color: #0a0a0a;
+  box-shadow: 0 0 25px #0ff, 0 0 50px #6c63ff;
+}
+
+/* Contact Form */
+.contact-form { display:flex; flex-direction:column; width:80%; max-width:500px; gap:20px; padding:30px; border-radius:20px; border:1px solid #0ff; box-shadow:0 0 25px #0ff,0 0 50px #6c63ff; }
+.contact-form input, .contact-form textarea { padding:15px; border-radius:15px; border:1px solid #0ff; background:#121212; color:#fff; font-size:1rem; }
+.contact-form button { padding:15px; border-radius:50px; border:2px solid #0ff; background:#0ff; color:#0a0a0a; font-weight:bold; cursor:pointer; transition: all 0.3s ease; }
+.contact-form button:hover { background:#6c63ff; color:#fff; box-shadow:0 0 25px #0ff,0 0 50px #6c63ff; }
+
+/* Footer */
+footer { padding:40px; text-align:center; background:#0a0a0a; border-top:2px solid #0ff; font-size:1rem; }
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-buttons{ flex-direction:column; }
+  .cards-container{ flex-direction:column; align-items:center; }
+  .live-demo-frame{ width:95%; height:400px; }
+  .contact-form{ width:95%; }
+}
+#thanksMessage{
+  background-attachment: fixed;
+}
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .btn, .frame {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+
+  form {
+    width: 90%;
+    margin: auto;
+  }
+
+  input, textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
